@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransposeApi", "TransposeApi\TransposeApi.csproj", "{3165A0E8-998C-491F-9293-849C20E64B02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransposeApiTests", "TransposeApiTests\TransposeApiTests.csproj", "{4D2D1721-2C2B-4A5D-AD8F-B79A13E39E23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransposeUi", "TransposeUi\TransposeUi.csproj", "{A476FDA8-40E1-497B-B00F-84D74D71F811}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3165A0E8-998C-491F-9293-849C20E64B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3165A0E8-998C-491F-9293-849C20E64B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3165A0E8-998C-491F-9293-849C20E64B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3165A0E8-998C-491F-9293-849C20E64B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D2D1721-2C2B-4A5D-AD8F-B79A13E39E23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D2D1721-2C2B-4A5D-AD8F-B79A13E39E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D2D1721-2C2B-4A5D-AD8F-B79A13E39E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D2D1721-2C2B-4A5D-AD8F-B79A13E39E23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A476FDA8-40E1-497B-B00F-84D74D71F811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A476FDA8-40E1-497B-B00F-84D74D71F811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A476FDA8-40E1-497B-B00F-84D74D71F811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A476FDA8-40E1-497B-B00F-84D74D71F811}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
