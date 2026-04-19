@@ -1,8 +1,11 @@
-﻿namespace TransposeApiTests;
+﻿using TransposeApi;
+using TransposeApi.Tunings.Guitar;
+
+namespace TransposeApiTests;
 
 public class Tests
 {
-    private readonly TransposeApi.Transposer _transposer = new ();
+    private readonly Transposer _transposer = new ();
     [SetUp]
     public void Setup()
     {
@@ -31,4 +34,36 @@ public class Tests
         Assert.That(_transposer.SciPitchNotationToMidi("C8"), Is.EqualTo(108));
         Assert.That(_transposer.SciPitchNotationToMidi("G9"), Is.EqualTo(127));
     }
+
+    [Test]
+    public void TabValueToSciPitchNotation()
+    {
+        // Standard Tuning
+        Assert.That(_transposer.TabValueToSciPitchNotation("E4", 0), Is.EqualTo("E4"));
+        Assert.That(_transposer.TabValueToSciPitchNotation("B3", 0), Is.EqualTo("B3"));
+        Assert.That(_transposer.TabValueToSciPitchNotation("G3", 0), Is.EqualTo("G3"));
+        Assert.That(_transposer.TabValueToSciPitchNotation("D3", 0), Is.EqualTo("D3"));
+        Assert.That(_transposer.TabValueToSciPitchNotation("A2", 0), Is.EqualTo("A2"));
+        Assert.That(_transposer.TabValueToSciPitchNotation("E2", 0), Is.EqualTo("E2"));
+    }
+
+    [Test]
+    public void Arrangement()
+    {
+        var a = new Arrangement(Data.Split('\n'), GuitarTunings.Standard);
+        var b = 1;
+    }
+
+
+
+    private string Data = @"
+        Tuning: EADGBe
+[Piano arranged for guitar]
+e|---------------------------------|
+B|---------------------------------|
+G|---3---3---3---3---3---3---3---3-|
+D|-----5-------5-------5-------5---|
+A|-4-------4-------4-------4-------|
+E|---------------------------------|
+    ";
 }

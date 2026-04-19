@@ -4,26 +4,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="TransposeUi.MainWindow"
+        Background="#565656"
         xmlns:local="clr-namespace:TransposeUi"
         Title="TransposeUi"
-        x:DataType="local:ViewModel">
-    <TabControl>
-        <TabItem Header="Tab Input">
-            <Grid RowDefinitions="Auto, *">
-                <StackPanel Orientation="Horizontal">
-                    <ComboBox Grid.Row="0" SelectedIndex="0">
-                        <ComboBoxItem Content="Guitar Standard - E A D G B E"/>
-                    </ComboBox>
-                    <Button Content="Translate" Click="TranslateTabs" />
+        x:DataType="local:ViewModel" WindowState="Maximized" >
+    <Grid RowDefinitions="Auto, *" ColumnDefinitions="*,5, *">
+        <Grid Grid.Row="0" RowDefinitions="Auto, Auto" Grid.ColumnSpan="3">
+            <StackPanel Orientation="Horizontal" Margin="0,3,3,5">
+                    <Button Content="Load 📥" Click="LoadFile" Width="125" Height="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="2" Padding="2" />
+                    <Button Content="Save 🗄️" Click="SaveFile" Width="125" Height="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="2" Padding="2" />
+                    <Button Content="Save As 🗄️"  Width="125" Height="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="2" Padding="2" />
+                    <Button Content="Transpose 🔁" Click="TranslateTabs" Width="125" Height="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="2" Padding="2" />
+            </StackPanel>
+            <WrapPanel Grid.Row="1" Orientation="Horizontal">
+                <Menu>
+                    <MenuItem Header="Tunings ⌄">
+                        <MenuItem Header="Standard E-A-D-G-B-e" />
+                    </MenuItem>
+                </Menu>
+                <TextBox HorizontalContentAlignment="Center" Text="E2" Margin="2" />
+                <TextBox HorizontalContentAlignment="Center" Text="A2" Margin="2" />
+                <TextBox HorizontalContentAlignment="Center" Text="D3" Margin="2" />
+                <TextBox HorizontalContentAlignment="Center" Text="G3" Margin="2" />
+                <TextBox HorizontalContentAlignment="Center" Text="B3" Margin="2" />
+                <TextBox HorizontalContentAlignment="Center" Text="E4" Margin="2" />
+                <StackPanel Orientation="Horizontal" Margin="2">
+                    <Label Content="  Capo: " VerticalAlignment="Center" />
+                    <TextBox HorizontalContentAlignment="Center" Text="0"/>
                 </StackPanel>
-                <TextBox Grid.Row="1" Text="{Binding TabText}" TextWrapping="Wrap" AcceptsTab="True" AcceptsReturn="True"  />
-            </Grid>
-        </TabItem>
-        <TabItem Header="S.P.N Output">
-            
-        </TabItem>
-        <TabItem Header="Midi">
-            
-        </TabItem>
-    </TabControl>
+                <StackPanel Orientation="Horizontal" Margin="2">
+                    <Label Content="  Song: " VerticalAlignment="Center"/>
+                    <TextBox HorizontalContentAlignment="Center" Text="test" Width="250"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="2">
+                    <Label Content="  Band: " VerticalAlignment="Center"/>
+                    <TextBox HorizontalContentAlignment="Center" Text="test band" Width="250"/>
+                </StackPanel>
+            </WrapPanel>
+        </Grid>
+        <TextBox Padding="5" Margin="2,2,5,5" FontSize="16" Grid.Row="1" Grid.Column="0" FontFamily="Courier New" Text="{Binding TabText}" AcceptsTab="True" AcceptsReturn="True"  />
+        <GridSplitter Grid.Row="1" Grid.Column="1" Margin="0,2,0,5" Background="#232323" />
+        <TextBox Padding="5" Margin="5,2,2,5" FontSize="16" Grid.Row="1" Grid.Column="2" FontStretch="UltraCondensed" FontFamily="Courier New" Text="{Binding TranslatedText}" AcceptsReturn="True" AcceptsTab="True" />
+    </Grid>
 </Window>

@@ -22,6 +22,9 @@ public class Transposer // Determines note value
 
     public string TabValueToSciPitchNotation(byte rootNoteMidi, byte fretValue) =>
         MidiToSciPitchNotation((byte)(rootNoteMidi + fretValue));
+    
+    public string TabValueToSciPitchNotation(string rootNoteMidi, byte fretValue) =>
+        MidiToSciPitchNotation((byte)(SciPitchNotationToMidi(rootNoteMidi) + fretValue));
 
     public (byte rootNote, byte fretValue) SciPitchNotationToTab(byte[] midiTuning, string sciPitchNotation) =>
         (0, 0); // TODO
